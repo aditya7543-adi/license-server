@@ -6,6 +6,30 @@
       "expiry": "2025-12-31",
       "note": "VIP User License"
     },
+     {
+      "key": "ADITYA-12345",
+      "max_uses": 1,
+      "expiry": "2025-12-31",
+      "note": "VIP User License"
+    },
+     {
+      "key": "ADITYA-123456",
+      "max_uses": 1,
+      "expiry": "2025-12-31",
+      "note": "VIP User License"
+    },
+     {
+      "key": "ADITYA-1234567",
+      "max_uses": 1,
+      "expiry": "2025-12-31",
+      "note": "VIP User License"
+    },
+     {
+      "key": "ADITYA-12345678",
+      "max_uses": 1,
+      "expiry": "2025-12-31",
+      "note": "VIP User License"
+    },
     {
       "key": "ADITYA-5678",
       "max_uses": 5,
