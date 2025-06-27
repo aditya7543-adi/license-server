@@ -1,0 +1,22 @@
+name: Update Licenses
+on:
+  repository_dispatch:
+    types: [key_used]
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update JSON
+        run: |
+          # Python script to append used keys
+          echo '{"key":"${{ github.event.client_payload.key }}","device_id":"${{ github.event.client_payload.device_id }}"}' >> used_keys.json
+          jq --slurpfile used used_keys.json '.used_keys += $used' licenses.json > temp.json
+          mv temp.json licenses.json
+      - name: Commit Changes
+        run: |
+          git config --global user.name "Automated License Manager"
+          git config --global user.email "license-bot@example.com"
+          git add licenses.json
+          git commit -m "Auto-update: Key ${{ github.event.client_payload.key }} used"
+          git push
